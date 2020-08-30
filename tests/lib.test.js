@@ -50,4 +50,10 @@ describe('registerUser', () => {
       }).toThrow();
     });
   });
+
+  it('should return a user object if valid username is passed', () => {
+    const result = lib.registerUser('Muhanned');
+    expect(result).toMatchObject({ username: 'Muhanned' });
+    expect(result.id).toBeGreaterThan(0);
+  });
 });
