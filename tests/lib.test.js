@@ -24,3 +24,13 @@ describe('greet', () => {
     expect(result).toContain('Muhanned');
   });
 });
+
+describe('getCurrencies', () => {
+  it('should return supported currencies', () => {
+    const result = lib.getCurrencies();
+    // expect(result).toContain('USD');
+    // expect(result).toContain('AUD');
+    // expect(result).toContain('EUR');
+    expect(result).toEqual(expect.arrayContaining(['USD', 'AUD', 'EUR']));
+  });
+});
